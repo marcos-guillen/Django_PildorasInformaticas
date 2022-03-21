@@ -1,0 +1,34 @@
+{% extends 'ProjectoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div><p>&nbsp;</p></div>
+<div class="container">
+    {% if miFormulario.errors %}
+        <p style="color: red;">Por favor revisa este campo</p>
+    {% endif %}
+
+    <div class="contenedorFormulario">
+        {% if 'valido' in request.GET %}
+            <p style="color: white; text-align: center;">Información enviada correctamente, gracias</p>
+        {% else %}
+            {% if 'novalido' in request.GET %}
+                <p style="color: rgb(145, 104, 241); text-align: center;">Error al enviar la información, por favor, intentalo otra vez</p>
+            {% endif %}
+        {% endif %}
+        <form action="" method="POST" style="text-align: center;">
+            {% csrf_token %}
+            <table style="color: white; margin: 20px auto;">
+                {{ miFormulario.as_table }}
+            </table>   
+    <!--     {{ miFormulario.as_p }}
+            {{ miFormulario.as_ul }}  -->
+            <input type="submit" value='Enviar' style="width: 150px;">
+
+        </form>
+    </div>
+</div>
+<div><p style="color: snow;">{{request.POST}}</p></div>
+{% endblock %}

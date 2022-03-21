@@ -1,0 +1,21 @@
+from django.http import request
+from django.shortcuts import render
+from blog.models import Categoria,Post
+
+# Create your views here.
+
+def blog(request):
+    posts=Post.objects.all()
+    categor=[]
+    for post in posts:
+        categorias=post.categorias.all()
+        categorias=list(categorias)
+        for categoria in categorias:
+            categor.append(categoria)
+    catego=set(categor)
+    return render(request,'blog/blog.html',{'posts':posts,'categos':catego})
+
+def categoria(request,categoria_id):
+    categoria=Categoria.objects.get(id=categoria_id)
+    posts=Post.objects.filter(categorias=categoria)
+    return render(request, "blog/categoria.html",{'categoria':categoria,'posts':posts})
