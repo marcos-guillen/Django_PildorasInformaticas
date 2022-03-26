@@ -35,7 +35,7 @@
     Categorías: 
     {% for post in posts %}
       {% for categoria in post.categorias.all %}
-        {{post.titulo}} - {{categoria.nombre}} &nbsp;&nbsp;&nbsp;
+        <span class="mx-3 px-2 border" > {{post.titulo}} - {{categoria.nombre}} </span>
       {% endfor %}
     {% endfor %}
   </div>
@@ -44,7 +44,7 @@
   <div style="width: 75%; margin: auto; text-align: center; color: white;">
     Categorias: 
     {% for catego in categos %}
-      <a href="{% url 'categoria' catego.id %}" class=linksCategorias>{{catego}}</a> &nbsp;&nbsp;&nbsp;   
+    <span class="mx-3" ><a href="{% url 'categoria' catego.id %}" class=linksCategorias>{{catego}}</a> </span>   
     {% endfor %}
   </div>
 </section>  

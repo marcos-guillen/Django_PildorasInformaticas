@@ -35,7 +35,7 @@
     Categorias: 
     {% for post in posts %}
       {% for categoria in post.categorias.all %}
-        {{post.titulo}} - {{categoria.nombre}} &nbsp;&nbsp;&nbsp;
+        <span class="mx-3 px-2 border" > {{post.titulo}} - {{categoria.nombre}} </span>
       {% endfor %}
     {% endfor %}
   </div>
