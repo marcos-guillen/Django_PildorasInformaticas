@@ -5,7 +5,7 @@ Esto es un proyecto del curso de Juan Diaz https://www.youtube.com/watch?v=7XO1A
 
 ![](./screenshot.png)
 
-## Esta actualizado hasta el video 62.
+## Esta actualizado hasta el video 64.
 
 ### Esta pensado este código para aquellas personas que siguiendo el curso se hayan perdido y no les funcione.
 
